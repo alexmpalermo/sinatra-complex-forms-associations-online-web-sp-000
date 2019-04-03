@@ -30,13 +30,20 @@ end
   end
 
   patch '/owners/:id' do 
+<<<<<<< HEAD
     @owner = Owner.find(params[:id])
     
+=======
+>>>>>>> c1793c3d73dd1a68fca295b34d23d90797a6758e
    if !params[:owner].keys.include?("pet_ids")
     params[:owner]["pet_ids"] = []
     end
  
+<<<<<<< HEAD
     
+=======
+    @owner = Owner.find(params[:id])
+>>>>>>> c1793c3d73dd1a68fca295b34d23d90797a6758e
     @owner.update(params["owner"])
     if !params["pet"]["name"].empty?
       @owner.pets << Pet.create(name: params["pet"]["name"])
